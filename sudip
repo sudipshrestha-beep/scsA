@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Structural Pseudo Classes</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    padding:20px;
+    background:#f4f4f4;
+}
+
+h1{
+    text-align:center;
+}
+
+section{
+    background:white;
+    padding:15px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* :first-child */
+.first-child-demo p:first-child{
+    color:red;
+    font-weight:bold;
+}
+
+/* :last-child */
+.last-child-demo p:last-child{
+    color:green;
+    font-weight:bold;
+}
+
+/* :nth-child() */
+.nth-child-demo li:nth-child(3){
+    background:gold;
+    padding:5px;
+}
+
+/* :nth-last-child() */
+.nth-last-child-demo li:nth-last-child(2){
+    background:lightblue;
+    padding:5px;
+}
+
+/* :first-of-type */
+.first-of-type-demo p:first-of-type{
+    color:purple;
+    font-size:20px;
+}
+
+/* :last-of-type */
+.last-of-type-demo p:last-of-type{
+    color:orange;
+    font-size:20px;
+}
+
+/* :nth-of-type() */
+.nth-of-type-demo p:nth-of-type(2){
+    background:pink;
+    padding:5px;
+}
+
+/* :nth-last-of-type() */
+.nth-last-of-type-demo p:nth-last-of-type(2){
+    background:lightgreen;
+    padding:5px;
+}
+
+/* :only-child */
+.only-child-demo p:only-child{
+    color:white;
+    background:teal;
+    padding:10px;
+}
+
+/* :only-of-type */
+.only-of-type-demo h3:only-of-type{
+    color:white;
+    background:brown;
+    padding:10px;
+}
+
+/* :empty */
+.empty-demo div:empty{
+    width:150px;
+    height:50px;
+    background:red;
+    border:2px solid black;
+}
+
+/* :not() */
+.not-demo li:not(.special){
+    color:blue;
+}
+
+/* :root */
+:root{
+    --main-color:#007bff;
+}
+.root-demo{
+    color:var(--main-color);
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>CSS Structural Pseudo Classes Examples</h1>
+
+<section class="first-child-demo">
+<h2>:first-child</h2>
+<p>First paragraph selected</p>
+<p>Second paragraph</p>
+<p>Third paragraph</p>
+</section>
+
+<section class="last-child-demo">
+<h2>:last-child</h2>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Last paragraph selected</p>
+</section>
+
+<section class="nth-child-demo">
+<h2>:nth-child(3)</h2>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3 Selected</li>
+<li>Item 4</li>
+</ul>
+</section>
+
+<section class="nth-last-child-demo">
+<h2>:nth-last-child(2)</h2>
+<ul>
+<li>Item A</li>
+<li>Item B</li>
+<li>Item C Selected</li>
+<li>Item D</li>
+</ul>
+</section>
+
+<section class="first-of-type-demo">
+<h2>:first-of-type</h2>
+<h3>Heading</h3>
+<p>First paragraph selected</p>
+<p>Second paragraph</p>
+</section>
+
+<section class="last-of-type-demo">
+<h2>:last-of-type</h2>
+<p>Paragraph 1</p>
+<p>Last paragraph selected</p>
+</section>
+
+<section class="nth-of-type-demo">
+<h2>:nth-of-type(2)</h2>
+<p>Paragraph 1</p>
+<p>Paragraph 2 Selected</p>
+<p>Paragraph 3</p>
+</section>
+
+<section class="nth-last-of-type-demo">
+<h2>:nth-last-of-type(2)</h2>
+<p>Paragraph A</p>
+<p>Paragraph B Selected</p>
+<p>Paragraph C</p>
+</section>
+
+<section class="only-child-demo">
+<h2>:only-child</h2>
+<div>
+<p>Only child selected</p>
+</div>
+</section>
+
+<section class="only-of-type-demo">
+<h2>:only-of-type</h2>
+<div>
+<h3>Only h3 selected</h3>
+<p>Paragraph</p>
+<p>Another Paragraph</p>
+</div>
+</section>
+
+<section class="empty-demo">
+<h2>:empty</h2>
+<div></div>
+<p>Red box above is an empty div.</p>
+</section>
+
+<section class="not-demo">
+<h2>:not()</h2>
+<ul>
+<li>Item 1</li>
+<li class="special">Special Item</li>
+<li>Item 3</li>
+<li>Item 4</li>
+</ul>
+</section>
+
+<section>
+<h2>:root</h2>
+<p class="root-demo">
+This text uses a CSS variable defined in :root.
+</p>
+</section>
+
+</body>
+</html>
